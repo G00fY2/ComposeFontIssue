@@ -39,20 +39,10 @@ android {
     }
 
     testOptions {
-        animationsDisabled = true
         unitTests {
             isIncludeAndroidResources = true
-            isReturnDefaultValues = true
-            all {
-                it.minHeapSize = "384m"
-                it.maxHeapSize = "1G"
-            }
         }
     }
-}
-
-tasks.withType<Test> {
-    useJUnitPlatform()
 }
 
 dependencies {
@@ -76,12 +66,6 @@ dependencies {
     testImplementation(libs.androidx.ui.test.junit4)
     testImplementation(libs.androidx.ui.test.manifest)
     debugImplementation(libs.androidx.ui.test.manifest)
-
-    testImplementation(platform(libs.junit5.bom))
-    testImplementation(libs.junit5.api)
-    testRuntimeOnly(libs.junit5.engine)
-    testCompileOnly(libs.junit4)
-    testRuntimeOnly(libs.junit5.vintage.engine)
 
     testImplementation(libs.assertJ)
 }

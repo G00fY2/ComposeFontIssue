@@ -16,30 +16,20 @@ android {
     }
 
     compileOptions {
-        sourceCompatibility = JavaVersion.VERSION_11
-        targetCompatibility = JavaVersion.VERSION_11
+        sourceCompatibility = JavaVersion.VERSION_17
+        targetCompatibility = JavaVersion.VERSION_17
     }
     kotlinOptions {
-        jvmTarget = "11"
+        jvmTarget = "17"
     }
     buildFeatures {
         compose = true
     }
     testOptions {
-        animationsDisabled = true
         unitTests {
             isIncludeAndroidResources = true
-            isReturnDefaultValues = true
-            all {
-                it.minHeapSize = "384m"
-                it.maxHeapSize = "1G"
-            }
         }
     }
-}
-
-tasks.withType<Test> {
-    useJUnitPlatform()
 }
 
 dependencies {
@@ -63,12 +53,6 @@ dependencies {
     testImplementation(libs.androidx.ui.test.junit4)
     testImplementation(libs.androidx.ui.test.manifest)
     debugImplementation(libs.androidx.ui.test.manifest)
-
-    testImplementation(platform(libs.junit5.bom))
-    testImplementation(libs.junit5.api)
-    testRuntimeOnly(libs.junit5.engine)
-    testCompileOnly(libs.junit4)
-    testRuntimeOnly(libs.junit5.vintage.engine)
 
     testImplementation(libs.assertJ)
 }
