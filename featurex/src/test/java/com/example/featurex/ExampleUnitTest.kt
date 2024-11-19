@@ -1,4 +1,4 @@
-package com.google.composefonttest
+package com.example.featurex
 
 import androidx.compose.material3.Text
 import androidx.compose.ui.Modifier

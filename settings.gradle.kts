@@ -21,4 +21,5 @@ dependencyResolutionManagement {
 
 rootProject.name = "ComposeFontTest"
 include(":app")
- 
+include(":theme")
+include(":featurex")
